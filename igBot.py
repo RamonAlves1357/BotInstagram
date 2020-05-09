@@ -70,8 +70,8 @@ class InstagramBot:
     def comentar(self):
         driver = self.driver
         try:
-            # driver.get("https://www.instagram.com/p/B_1BX_OF8cp/?utm_source=ig_web_copy_link") #link
-            driver.get("https://www.instagram.com/p/B_1INDgFXvC/") #link
+            driver.get("https://www.instagram.com/p/B_1BX_OF8cp/?utm_source=ig_web_copy_link") #link
+            #driver.get("https://www.instagram.com/p/B_1INDgFXvC/") #link
             time.sleep(2)
             print("entrou na publicação!")    
         except Exception as err:
@@ -131,23 +131,30 @@ class InstagramBot:
         print("j: ", j)
 
         for a in range(1, 100000):
-            print ("Comentario: ", a)
+              try:
+                print ("Comentario: ", a)
             
-            i = random.randint(0, int(len(comentarios)))
-            
-            print("Comentario escolhido: ", comentarios[i])
-            print("Posição: ", i)
+                i = random.randint(0, int(len(comentarios)))
+                
+                print("Comentario escolhido: ", comentarios[i])
+                print("Posição: ", i, "\n")
 
-            driver.find_element_by_xpath('//textarea[@placeholder="Adicione um comentário..."]').click()
-            campo_comentario = driver.find_element_by_xpath('//textarea[@placeholder="Adicione um comentário..."]')
-            time.sleep((random.randint(1, 3))/2)
-            
-            self.digite_como_uma_pessoa(comentarios[i], campo_comentario)
-            time.sleep(5)
+                driver.find_element_by_xpath('//textarea[@placeholder="Adicione um comentário..."]').click()
+                campo_comentario = driver.find_element_by_xpath('//textarea[@placeholder="Adicione um comentário..."]')
+                time.sleep((random.randint(1, 3))/2)
+                
+                self.digite_como_uma_pessoa(comentarios[i], campo_comentario)
+                time.sleep(5)
 
 
-            driver.find_element_by_xpath("//button[contains(text(), 'Publicar')]").click()
-            time.sleep(random.randint(17,19))
+                driver.find_element_by_xpath("//button[contains(text(), 'Publicar')]").click()
+                time.sleep(random.randint(17,19))
+              except Exception as err:
+                print("Erro: ", err)
+                driver.refresh()
+                time.sleep(5)
+                print("Refresh \n")
+                
 
 
 StartBot = InstagramBot("ramon81062213@hotmail.com", "81326776")
