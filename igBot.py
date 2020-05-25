@@ -70,8 +70,8 @@ class InstagramBot:
     def comentar(self):
         driver = self.driver
         try:
-            driver.get("https://www.instagram.com/p/B_1BX_OF8cp/?utm_source=ig_web_copy_link") #link
-            #driver.get("https://www.instagram.com/p/B_1INDgFXvC/") #link
+            #driver.get("https://www.instagram.com/p/B_1BX_OF8cp/?utm_source=ig_web_copy_link") #link
+            driver.get("https://www.instagram.com/p/CAGkq0sBM7K/?utm_source=ig_web_copy_link") #link
             time.sleep(2)
             print("entrou na publicação!")    
         except Exception as err:
@@ -125,7 +125,7 @@ class InstagramBot:
         #     print("Ouve um erro: ", err)
 
         
-        comentarios = ["Eu quero", "Já ganhei", "É meu", "Quero ganhar", "Azul", "Ramon", "Guilherme", "Lidiane", "Gabriel", "Rafael", "Davi", "Bruna", "Valentina", "São Paulo", "Zebra", "Cachorro", "Gato", "Leão", "Papagaio", "Amazonas", "Paraiba", "Vaca", "Cajá", "Melão", "Melancia", "Abacate", "Coco" , "Banana", "Manga", "Mateus", "Uva"]
+        comentarios = ["Eu quero", "Já ganhei", "É meu", "Quero ganhar", "Azul", "Ramon", "Guilherme", "Lidiane", "Gabriel", "Alice", "Miguel", "Sophia", "Arthur", "Helena", "Bernardo", "Valentina", "Heitor", "Laura", "Davi", "Isabella", "Lorenzo", "Manuela", "Théo", "Júlia", "Pedro", "Heloísa", "Gabriel", "Luiza", "Enzo", "Maria Luiza","Lorena", "Lucas", "Lívia", "Benjamin", "Giovanna", "Nicolas", "Guilherme", "Beatriz", "Joaquim", "Davi", "Bruna", "Valentina", "São Paulo", "Zebra", "Cachorro", "Gato", "Leão", "Papagaio", "Amazonas", "Paraiba", "Vaca", "Cajá", "Melão", "Melancia", "Abacate", "Coco" , "Banana", "Manga", "Mateus", "Uva"]
 
         j = int(len(comentarios))
         print("j: ", j)
@@ -144,15 +144,15 @@ class InstagramBot:
                 time.sleep((random.randint(1, 3))/2)
                 
                 self.digite_como_uma_pessoa(comentarios[i], campo_comentario)
-                time.sleep(5)
+                time.sleep(6)
 
 
                 driver.find_element_by_xpath("//button[contains(text(), 'Publicar')]").click()
-                time.sleep(random.randint(17,19))
+                time.sleep(random.randint(20,22))
               except Exception as err:
                 print("Erro: ", err)
                 driver.refresh()
-                time.sleep(5)
+                time.sleep(6)
                 print("Refresh \n")
                 
 
