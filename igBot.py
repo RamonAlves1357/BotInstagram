@@ -71,7 +71,7 @@ class InstagramBot:
         driver = self.driver
         try:
             #driver.get("https://www.instagram.com/p/B_1BX_OF8cp/?utm_source=ig_web_copy_link") #link
-            driver.get("https://www.instagram.com/p/CAGkq0sBM7K/?utm_source=ig_web_copy_link") #link
+            driver.get("https://www.instagram.com/p/CC-IjbAhuEy/?utm_source=ig_web_copy_link") #link
             time.sleep(2)
             print("entrou na publicação!")    
         except Exception as err:
@@ -154,8 +154,6 @@ class InstagramBot:
                 driver.refresh()
                 time.sleep(6)
                 print("Refresh \n")
-                
-
 
 StartBot = InstagramBot("ramon81062213@hotmail.com", "81326776")
 StartBot.login_face()
